@@ -3,6 +3,34 @@
 $deepBlue: #032f3e;
 $sectionHeading: 24px;
 $offWhite: #f8f9fb;
+$banner-heading: 46px;
+
+//mixins
+
+@mixin banner {
+    color: white;
+    position: relative;
+    width: 100%;
+    .banner-content{
+        position: absolute;
+        top: 50px;
+        width:100%;
+    }
+    img{
+        width: 100%;
+    }
+    span{
+        font-size: $banner-heading;
+        font-weight: bold;
+        display: block;
+        text-transform: uppercase;
+
+    }
+    span.title{
+        font-weight: normal;
+        margin-bottom: 30px;
+    }
+}
 
 #main-nav{
     background-color: $deepBlue;
@@ -33,4 +61,18 @@ $offWhite: #f8f9fb;
 section h1{
     font-size: $sectionHeading;
     color: $deepBlue;
+}
+
+.lead-banner{
+    @include banner;
+    text-align: right;
+}
+.lessons-banner{
+    @include banner;
+    li{
+        font-size: 20px;
+        max-width:500px;
+        margin: 60px 0;
+        text-transform: uppercase;
+    }
 }
